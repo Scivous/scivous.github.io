@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在JWT（JSON Web Token）中，uuid 和 usrid 通常都是用于标识用户或实体的唯一标识符，但它们有不同的定义和用途，具体差异通常取决于应用场景和系统设计。下面是它们的一些区别： 1. UUID（通用唯一标识符） 定义：UUID（Universally Unique Identifier）是一种标准的标识符格式，它由一个 128 位的值组成，通常表示为 32 个十六进制字符（包括">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2025/03/03/userid%E4%B8%8Euuid/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在JWT（JSON Web Token）中，uuid 和 usrid 通常都是用于标识用户或实体的唯一标识符，但它们有不同的定义和用途，具体差异通常取决于应用场景和系统设计。下面是它们的一些区别： 1. UUID（通用唯一标识符） 定义：UUID（Universally Unique Identifier）是一种标准的标识符格式，它由一个 128 位的值组成，通常表示为 32 个十六进制字符（包括">
+<meta property="og:locale">
+<meta property="article:published_time" content="2025-03-03T08:08:13.983Z">
+<meta property="article:modified_time" content="2024-12-19T07:54:59.330Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2025/03/03/userid与uuid/"/>
+
+
+
+
+
+  <title> | Hexo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/03/userid%E4%B8%8Euuid/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2025-03-03T16:08:13+08:00">
+                2025-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在JWT（JSON Web Token）中，<code>uuid</code> 和 <code>usrid</code> 通常都是用于标识用户或实体的唯一标识符，但它们有不同的定义和用途，具体差异通常取决于应用场景和系统设计。下面是它们的一些区别：</p>
+<h3 id="1-UUID（通用唯一标识符）"><a href="#1-UUID（通用唯一标识符）" class="headerlink" title="1. UUID（通用唯一标识符）"></a>1. <strong>UUID（通用唯一标识符）</strong></h3><ul>
+<li><p><strong>定义</strong>：UUID（Universally Unique Identifier）是一种标准的标识符格式，它由一个 128 位的值组成，通常表示为 32 个十六进制字符（包括4个破折号）。UUID 的设计目标是确保全球范围内的唯一性，无论在哪个系统或环境中生成，UUID 都非常难以重复。</p>
+</li>
+<li><p><strong>格式</strong>：标准的 UUID 通常表现为类似以下形式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">550e8400-e29b-41d4-a716-446655440000</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>用途</strong>：UUID 用于确保全局唯一标识，通常用于标识数据库中的条目或系统中的某个对象。它的使用不依赖于特定的用户或上下文。</p>
+</li>
+<li><p><strong>在JWT中的应用</strong>：如果 JWT 中包含 <code>uuid</code> 字段，这通常是用来标识一个用户、设备、会话或其他任何需要全局唯一标识的对象。它可能不是基于用户的真实身份，而是用于标识会话、设备或系统中的其他对象。</p>
+</li>
+</ul>
+<h3 id="2-USRID（用户标识符）"><a href="#2-USRID（用户标识符）" class="headerlink" title="2. USRID（用户标识符）"></a>2. <strong>USRID（用户标识符）</strong></h3><ul>
+<li><strong>定义</strong>：<code>usrid</code> 通常是指与特定用户相关的唯一标识符。这个标识符可能是系统内为用户分配的 ID，通常是数据库中的自增 ID 或者用户账号名称等。</li>
+<li><strong>格式</strong>：<code>usrid</code> 的格式通常是数字（如自增的数据库主键）或是字符串（如用户名）。它的目的是唯一标识特定用户。 例如：<ul>
+<li><code>usrid = 12345</code> 或</li>
+<li><code>usrid = &quot;johndoe&quot;</code></li>
+</ul>
+</li>
+<li><strong>用途</strong>：<code>usrid</code> 主要用于系统内部标识和跟踪某个特定的用户，在 JWT 中使用 <code>usrid</code> 通常意味着该标识符是与用户的身份直接相关的。</li>
+<li><strong>在JWT中的应用</strong>：如果 JWT 中包含 <code>usrid</code> 字段，这通常代表该 JWT 是为特定用户生成的，<code>usrid</code> 是该用户在系统中的唯一标识符。它通常用来确保该 token 与特定用户的身份相关联。</li>
+</ul>
+<h3 id="3-区别总结"><a href="#3-区别总结" class="headerlink" title="3. 区别总结"></a>3. <strong>区别总结</strong></h3><ul>
+<li><strong>UUID</strong> 是一种标准的、全局唯一标识符，广泛用于标识各种对象（包括用户、设备、会话等），其生成不依赖于任何用户信息，通常是随机或时间戳生成的。</li>
+<li><strong>USRID</strong> 是与特定用户相关的标识符，通常是系统内为用户分配的标识符，可能是数据库中的 ID 或用户名等。</li>
+</ul>
+<h3 id="4-在JWT中的应用"><a href="#4-在JWT中的应用" class="headerlink" title="4. 在JWT中的应用"></a>4. <strong>在JWT中的应用</strong></h3><ul>
+<li>**JWT中的<code>uuid</code>**：可能用于标识会话、设备或其他系统对象，它提供了全局唯一性。</li>
+<li>**JWT中的<code>usrid</code>**：通常标识当前认证用户，表示该 token 属于某个特定的用户。</li>
+</ul>
+<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><p>假设你有一个系统，用户登录后生成 JWT，JWT 中的 payload 可能包含以下内容：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;sub&quot;</span><span class="punctuation">:</span> <span class="string">&quot;12345&quot;</span><span class="punctuation">,</span>  <span class="comment">// 用户标识符（usrid）</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;John Doe&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;uuid&quot;</span><span class="punctuation">:</span> <span class="string">&quot;550e8400-e29b-41d4-a716-446655440000&quot;</span><span class="punctuation">,</span>  <span class="comment">// 会话或设备标识符</span></span><br><span class="line">  <span class="attr">&quot;iat&quot;</span><span class="punctuation">:</span> <span class="number">1631791723</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;exp&quot;</span><span class="punctuation">:</span> <span class="number">1631795323</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中：</p>
+<ul>
+<li><code>sub</code> 表示用户的标识符（<code>usrid</code>）。</li>
+<li><code>uuid</code> 可能代表一个唯一的会话 ID 或设备标识符，而不是特定的用户。</li>
+</ul>
+<p>总的来说，<code>uuid</code> 和 <code>usrid</code> 都是唯一标识符，但它们的具体应用场景和含义不同。 <code>uuid</code> 更常用来确保全局唯一性，而 <code>usrid</code> 更多地是用户相关的标识符。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2025/03/03/UnicastRemoteObject%20%E8%BF%99%E4%B8%AA%E7%B1%BB%E6%98%AF%E5%B9%B2%E5%95%A5%E5%BE%97%EF%BC%8C%E4%B8%BA%E5%95%A5%E8%A6%81%E8%BF%9B%E7%A8%8B%E8%BF%99%E4%B8%AA%E7%B1%BB/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2025/03/03/%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90%E7%90%86%E8%A7%A3%E4%B8%80%E4%B8%8B%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%AD%90%E7%B1%BB%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-UUID%EF%BC%88%E9%80%9A%E7%94%A8%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">1. UUID（通用唯一标识符）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-USRID%EF%BC%88%E7%94%A8%E6%88%B7%E6%A0%87%E8%AF%86%E7%AC%A6%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">2. USRID（用户标识符）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8C%BA%E5%88%AB%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">3. 区别总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%9C%A8JWT%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">4. 在JWT中的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">例子：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
